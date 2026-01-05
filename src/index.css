@@ -1,0 +1,117 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Your theme extensions here */
+  --color-lilac-50: #faf5ff;
+  --color-lilac-100: #f3e8ff;
+  --color-lilac-200: #e9d5ff;
+  --color-lilac-300: #d8b4fe;
+  --color-lilac-400: #c084fc;
+  --color-lilac-500: #a855f7;
+  --color-lilac-600: #9333ea;
+  --color-lilac-700: #7e22ce;
+  --color-lilac-800: #6b21a8;
+  --color-lilac-900: #581c87;
+  
+  --color-dark-bg: #0f0f23;
+  --color-dark-card: #1a1a2e;
+  --color-dark-text: #f8fafc;
+  --color-dark-text-secondary: #cbd5e1;
+  
+  --font-inter: 'Inter', sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-card);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-lilac-600);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-lilac-700);
+}
+
+/* Custom classes */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-lilac-400), #ffffff, var(--color-lilac-300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-padding {
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(168, 85, 247, 0.2);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background: linear-gradient(-45deg, #a855f7, #9333ea, #7e22ce, #6b21a8);
+  background-size: 400% 400%;
+  animation: gradient 8s linear infinite;
+}
